@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>media index</title>
+<script type="text/javascript">
+	KindEditor.create('#mediaDesc',{
+		uploadJson : '/content/upload.shtml',
+		items : ['source','|', 'justifyleft', 'justifycenter', 'justifyright','justifyfull', '|',
+		         'forecolor', '|', 'link', 'unlink'],
+		afterBlur: function(){
+			this.sync();
+		}
+	});
+</script>
+</head>
+<body>
+
+
+<div class="content-box">
+      <!-- Start Content Box -->
+      <div class="content-box-header">
+        <h3>媒体新增</h3>
+        <ul class="content-box-tabs">
+          <li><a href="#tab1" class="default-tab"></a></li>
+          <!-- href must be unique and match the id of target div -->
+          <li><a href="#tab2"></a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <!-- End .content-box-header -->
+      <div class="content-box-content">
+        <div class="tab-content" id="tab2">
+          <form name="createmeida" id="createmedia" action="${ctx }/media/uploaddesc.shtml" method="post">
+            <fieldset>
+            <!-- 设置类”列左”或“右列”字段划分形成列 -->
+            <p>
+             <label>分类列表</label>
+               <select name="dropdown" id="channelId">
+               <c:forEach var="channel" items="${channels}">
+                      <option value="${channel.channelId }">${channel.channelName}</option>
+               </c:forEach>
+               </select>
+            </p>
+            <p>
+            
+            <textarea cols="79" rows="15" id="mediaDesc" name="mediaDesc" >无</textarea>
+            </p>
+            <p>
+            <p>
+				<input type="file" name="imgFile" id="imgFile" >
+			</p>
+            </fieldset>
+            <div class="clear"></div>
+            <!-- End .clear -->
+          </form>
+        </div>
+        <!-- End #tab2 -->
+      </div>
+      <!-- End .content-box-content -->
+    </div>
+	<script type="text/javascript">
+	$(function(){
+		$('#imgFile').uploadify({
+			fileObjName     : 'imgFile',
+			buttonText : '媒体上传',
+            fileTypeExts: '*.gif; *.jpg; *.png',
+			swf      : '/js/uploadify/uploadify.swf',
+			uploader : '/media/uploaddesc.shtml',
+			onUploadStart: function(){
+				$("#imgFile").uploadify("settings", "formData", {'channelId' : $("#channelId option:selected").val(), 'mediaDesc' : $("#mediaDesc").val() });  
+			}
+		});
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* 首页 新闻页面 补充部分css */
+.bj-bl5 { background: none repeat scroll 0 0; clear: both; font-size: 0px; height: 5px; overflow: hidden; }
+.bj-bl10 { background: none repeat scroll 0 0; clear: both; font-size: 0px; height: 10px; overflow: hidden; }
+.bj-bl15 { background: none repeat scroll 0 0; clear: both; font-size: 0px; height: 15px; overflow: hidden; }
+.bj-bl20 { background: none repeat scroll 0 0; clear: both; font-size: 0px; height: 20px; overflow: hidden; }
+.bj-bom20{ margin-bottom:20px;}
+.bj-pad20{ padding-top:20px;}
+.bj-header {
+    font-size: 16px;
+     text-align: center;
+	 margin-top:50px;
+   text-shadow: 0 1px 0 rgba(81, -2, 2, 0.15);
+   background-color:#9dd6c5;
+}
+.bj-header h1 {
+    color: #FFFFFF;
+}
+.bj-header p {
+    font-weight: 300;
+    line-height: 1.5;
+}
+.bj-header .container {
+    position: relative;
+}
+@media (min-width: 768px) {
+.bj-header {
+    font-size: 21px;
+    text-align: left;
+}
+.bj-header h1 {
+    font-size: 60px;
+    line-height: 1;
+}
+}
+@media (min-width: 992px) {
+.bj-header h1, .bj-header p {
+    margin-right: 380px;
+}
+}
+.bj-container{ margin-top:20px;}
+.bj-foot{background-color:#9dd6c5;  }
+.affix{ top:70px;}
+.bj-left{ z-index:6; background:#FFF;}
+.bj-right{ z-index:3;}

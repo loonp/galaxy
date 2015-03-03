@@ -1,0 +1,98 @@
+Searching 1612 files for "loonp"
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/conf/app.conf:
+   14  # MYSQL用户名
+   15  dbuser= root
+   16: #dbuser = loonp
+   17  
+   18  # MYSQL密码
+   19  dbpassword = 1234
+   20: #dbpassword=loonppassword
+   21  
+   22  # MYSQL数据库名称
+   ..
+   26  #image server url
+   27  img_server_url = http://localhost:9091
+   28: #img_server_url = http://www.loonp.com
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/controllers/MediaController.go:
+    5  	"github.com/astaxie/beego"
+    6  	//"mime/multipart"
+    7: 	"loonp/lib"
+    8  	"strings"
+    9  )
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/controllers/UserController.go:
+    5  	"github.com/astaxie/beego"
+    6  	"github.com/astaxie/beego/validation"
+    7: 	m "loonp/models"
+    8: 	"loonp/service"
+    9  	"reflect"
+   10  	"strconv"
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/service/mediaservice.go:
+    3  import (
+    4  //"github.com/astaxie/beego/orm"
+    5: //m "loonp/models"
+    6  )
+    7  
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/static/js/do.js:
+   11  		h = {
+   12  			autoLoad: true,
+   13: 			coreLib: ["http://loonp.com/js/jquery.min.js"],
+   14  			mods: {}
+   15  		},
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/tests/default_test.go:
+    2  
+    3  import (
+    4: 	_ "loonp/routers"
+    5  	"net/http"
+    6  	"net/http/httptest"
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/views/base/content-header.tpl:
+    1  <div id="content" class="bj-header">
+    2    <div class="container">
+    3:     <h1>loonp</h1>
+    4      <p>骑车旅游，锻炼身体，国内外最新资讯</p>
+    5    </div>
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/views/base/footer.tpl:
+    4        <div class="col-xs-12">
+    5          <div class="submit">
+    6:           <p class="text-center">Copyright©loonp.com  京ICP备10007427号 <script type="text/javascript">
+    7  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    8  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa2957a7d592fd96e09ceb5bb886383b2' type='text/javascript'%3E%3C/script%3E"));
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/views/base/head.tpl:
+    1  <head>
+    2  <meta charset="utf-8">
+    3: <title>loonp</title>
+    4  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    5: <meta name="copyright" content="loonp.com" />
+    6  <meta name="keywords" content="自行车，自行车运动，自行车运动新闻，路谱咨询，路谱" />
+    7  <meta name="description" content="为热爱自行车运动的提供国内外新闻信息" />
+    8: <link href="css/loonp20131227.css" rel="stylesheet" type="text/css">
+    9  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+   10  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/views/base/header.tpl:
+    3      <div class="navbar-header">
+    4        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    5:       <a class="navbar-brand" href="../">loonp.com</a> </div>
+    6      <nav role="navigation" class="navbar-collapse bs-navbar-collapse in" style="height: auto;">
+    7        <ul class="nav navbar-nav">
+
+/Users/bluesand/gospace/src/github.com/loonp/galaxy/views/index.tpl:
+   18          <div class="col-md-8">
+   19            <h3 class="text-success"><a title="{{$val.ContentTitle}}" target="_blank" href="/detail?contentId={{$val.Id}}">{{$val.ContentTitle}}</a></h3>
+   20:           <div class="bj-bl10">loonp.com</div>
+   21            <small><b>发布者：</b>{{$val.CreateId | getUsernameById }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>发布：</b>{{date $val.CreateTime "Y-m-d H:i:s" }}</small>
+   22:           <div class="bj-bl10">loonp.com</div>
+   23            <p class="text-muted"><a target="_blank" href="/detail?contentId={{$val.Id}}">{{str2html $val.ContentSummary }}</a></p>
+   24:           <div class="bj-bl10">loonp.com</div>
+   25            <P><b>标签：</b>{{$val.Id | getTagNamesByCid}}</P> 
+   26          </div>
+
+18 matches across 11 files

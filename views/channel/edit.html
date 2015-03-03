@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="content-box">
+      <!-- Start Content Box -->
+      <div class="content-box-header">
+        <h3>栏目新增{{.editchannel.Id}} {{.editchannel.ChannelType}}</h3>
+        <ul class="content-box-tabs">
+          <li><a href="#tab1" class="default-tab"></a></li>
+          <!-- href must be unique and match the id of target div -->
+          <li><a href="#tab2"></a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <!-- End .content-box-header -->
+      <div class="content-box-content">
+        <div class="tab-content" id="tab2">
+          <form name="createchannel" id="createchannel" action="/channel/create" method="post">
+          <input type="hidden" id="channelId" name="channelId" value="{{.editchannel.Id}}">
+          <input type="hidden" id="createId" name="createId" value="{{.editchannel.CreateId }}">
+          <input type="hidden" id="channelLevel" name="channelLevel" value="{{.editchannel.ChannelLevel }}">
+            <fieldset>
+            <!-- 设置类”列左”或“右列”字段划分形成列 -->
+            <p>
+              <label>分类名称</label>
+              <input class="text-input small-input" type="text" id="channelName" name="channelName" value="{{.editchannel.ChannelName}}" />
+              <br /></p>
+            <p>
+              <label>分类样式</label>
+              <input class="text-input small-input" type="text" id="channelCss" name="channelCss" value="" />
+              <br /></p>
+              <!-- 
+            <p>
+              <label>介质形式输入</label>
+              <input class="text-input medium-input datepicker" type="text" id="medium-input" name="medium-input" />
+              <span class="input-notification error png_bg">错误消息</span> </p>
+               -->
+            <select name="channelType" id="channelType" class="small-input">
+            {{ if eq .editchannel.ChannelType 0  }}
+                <option value="0" selected="selected">图文</option>
+            {{ end }}
+            {{ if ne .editchannel.ChannelType 0  }}
+                <option value="0">图文</option>
+            {{ end }}
+            {{ if eq .editchannel.ChannelType 1  }}
+                <option value="1" selected="selected">媒体</option>
+            {{ end }}
+            {{ if ne .editchannel.ChannelType 1  }}
+                <option value="1">媒体</option>
+            {{ end }}
+            {{ if eq .editchannel.ChannelType 2  }}
+                <option value="2" selected="selected">内容型分类</option>
+            {{ end }}
+            {{ if ne .editchannel.ChannelType 2  }}
+                <option value="2">内容型分类</option>
+            {{ end }}
+            {{ if eq .editchannel.ChannelType 3  }}
+                <option value="3" selected="selected">图片加描述</option>
+            {{ end }}
+            {{ if ne .editchannel.ChannelType 3  }}
+                <option value="3">图片加描述</option>
+            {{ end }}
+              </select>
+            <p>
+              <input class="button" type="button" value="提交" onclick="submitchannel()" />
+            </p>
+            </fieldset>
+            <div class="clear"></div>
+            <!-- End .clear -->
+          </form>
+        </div>
+        <!-- End #tab2 -->
+      </div>
+      <!-- End .content-box-content -->
+    </div>
+</body>
+<script type="text/javascript">
+function submitchannel(){
+	var channelName = $("#channelName").val();
+	var channelType = $("#channelType").val();
+	var channelId = $("#channelId").val();
+	var createId = $("#createId").val();
+	var channelLevel=$("#channelLevel").val();
+	$("#right").html("loading...");
+	$("#right").load(
+	"/channel/update", //请求路径
+	{
+		"channelId":channelId, 
+		"channelName":channelName,
+    "createId":createId,
+		"channelType":channelType, 
+		"createId":createId
+	}
+	)
+	;
+}
+</script>
+</html>

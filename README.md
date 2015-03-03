@@ -1,2 +1,3 @@
-# galaxy
-Nothing at all.
+```sql
+create database galaxy
+```

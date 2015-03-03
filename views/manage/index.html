@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台登录</title>
+<!--                       CSS                       -->
+<!-- Reset Stylesheet -->
+<link rel="stylesheet" href="/css/manage/reset.min.css" type="text/css" media="screen" />
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/css/manage/style.min.css" type="text/css" media="screen" />
+<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+<link rel="stylesheet" href="/css/manage/invalid.min.css" type="text/css" media="screen" />
+
+<link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="/js/jquery-validate.min.js"></script>
+
+</head>
+
+<body id="login">
+<div id="login-wrapper" class="png_bg">
+  <div id="login-top">
+    <h1>Simpla Admin</h1>
+    <!-- Logo (221px width) -->
+    <a href="#"><img id="logo" src="/img/manage/logo.png" alt="Simpla Admin logo" /></a> </div>
+  <!-- End #logn-top -->
+  <div id="login-content">
+    <form action="/manage/login" method="post">
+     <!--  <div class="notification information png_bg">
+        <div> Just click "Sign In". No password needed. </div>
+      </div> -->
+      <p>
+        <label>用户名</label>
+        <input class="text-input" type="text" name="username"/>
+        <span id="messages"></span>
+      </p>
+      <div class="clear"></div>
+      <p>
+        <label>密码</label>
+        <input class="text-input" type="password"  name="password" data-required />
+      </p>
+      <div class="clear"></div>
+      <p id="remember-password">
+        <input type="checkbox" />
+        记住密码</p>
+      <div class="clear"></div>
+      <p>
+        <input class="button" type="submit" value="登陆" />
+      </p>
+    </form>
+  </div>
+  <!-- End #login-content -->
+</div>
+<!-- End #login-wrapper -->
+</body>
+</html>
